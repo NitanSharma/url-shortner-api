@@ -30,7 +30,9 @@ app.use("/api/user",user_routes) // user routes
 app.use("/api/auth",auth_routes)// auth routes
 app.use("/api/create",short_url)// short url routes
 app.get("/:id",redirectFromShortUrl)
-
+app.get('/', (req,res) =>{
+    res.send("Server is runing");
+})
 app.use(errorHandler) // error handler
 
 app.listen(3000,()=>{
